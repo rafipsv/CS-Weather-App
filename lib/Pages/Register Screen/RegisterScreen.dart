@@ -1,13 +1,12 @@
 // ignore_for_file: file_names
 
+import 'package:cs_weather_app/Pages/Login%20Screen/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Register Screen/RegisterScreen.dart';
-
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                 true,
               ),
               SizedBox(height: 150.h),
-              customButton("Sign in"),
+              customButton("Sign Up"),
               SizedBox(height: 30.h),
               customText2(context),
               SizedBox(height: 30.h),
@@ -59,7 +58,7 @@ class LoginScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "Sign in.",
+          "Sign Up.",
           style: GoogleFonts.pacifico(
             fontSize: 40.sp,
             fontWeight: FontWeight.w700,
@@ -76,14 +75,14 @@ class LoginScreen extends StatelessWidget {
       onTap: () {
         Navigator.pushAndRemoveUntil(context,
             MaterialPageRoute(builder: (context) {
-          return const RegisterScreen();
+          return const LoginScreen();
         }), (route) => false);
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Don't have an account? ",
+            "Already have an account? ",
             style: GoogleFonts.pacifico(
               fontSize: 15.sp,
               fontWeight: FontWeight.w600,
@@ -92,7 +91,7 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
           Text(
-            "Create Account",
+            "Sign In",
             style: GoogleFonts.pacifico(
               fontSize: 15.sp,
               fontWeight: FontWeight.w700,
