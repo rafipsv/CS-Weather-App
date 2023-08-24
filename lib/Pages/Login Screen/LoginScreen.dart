@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:cs_weather_app/Pages/HomePage/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                 true,
               ),
               SizedBox(height: 150.h),
-              customButton("Sign in"),
+              customButton("Sign in", context),
               SizedBox(height: 30.h),
               customText2(context),
               SizedBox(height: 30.h),
@@ -147,29 +148,37 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget customButton(String title) {
-    return Container(
-      height: 50.h,
-      width: 350.w,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.r),
-        gradient: const LinearGradient(
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-          colors: [
-            Color(0xffDB56C3),
-            Color(0xffFE9683),
-          ],
+  Widget customButton(String title, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushAndRemoveUntil(context,
+            MaterialPageRoute(builder: (context) {
+          return const HomePage();
+        }), (route) => false);
+      },
+      child: Container(
+        height: 50.h,
+        width: 350.w,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.r),
+          gradient: const LinearGradient(
+            begin: Alignment.bottomLeft,
+            end: Alignment.topRight,
+            colors: [
+              Color(0xffDB56C3),
+              Color(0xffFE9683),
+            ],
+          ),
         ),
-      ),
-      child: Text(
-        title,
-        style: GoogleFonts.pacifico(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w700,
-          letterSpacing: 3,
-          color: Colors.white,
+        child: Text(
+          title,
+          style: GoogleFonts.pacifico(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 3,
+            color: Colors.white,
+          ),
         ),
       ),
     );
