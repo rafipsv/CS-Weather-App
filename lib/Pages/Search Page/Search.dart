@@ -4,7 +4,7 @@ import 'package:cs_weather_app/Pages/HomePage/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../HomePage/HomeTop.dart';
+import '../HomePage/Widgets/HomeTop.dart';
 import '../Profile Page/Profile.dart';
 
 class SearchPage extends StatelessWidget {

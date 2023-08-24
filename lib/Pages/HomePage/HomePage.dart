@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
-import 'package:cs_weather_app/Pages/HomePage/HomeTop.dart';
+import 'package:cs_weather_app/Pages/HomePage/Widgets/HomeBottom.dart';
+import 'package:cs_weather_app/Pages/HomePage/Widgets/HomeTop.dart';
 import 'package:cs_weather_app/Pages/Profile%20Page/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,8 @@ class HomePage extends StatelessWidget {
             const HomeTop(),
             SizedBox(height: 30.h),
             const HomeBody(),
+            SizedBox(height: 30.h),
+            const HomeBottom(),
             const Spacer(),
             navigateBox(context),
             SizedBox(height: 30.h),

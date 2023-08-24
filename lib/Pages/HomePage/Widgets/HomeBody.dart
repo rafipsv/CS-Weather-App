@@ -12,6 +12,12 @@ class HomeBody extends StatelessWidget {
     return Column(
       children: [
         customText(),
+        SizedBox(height: 50.h),
+        homeImage(),
+        SizedBox(height: 30.h),
+        weatherText("Its cloudy"),
+        SizedBox(height: 10.h),
+        temperatureText("29°")
       ],
     );
   }
@@ -31,6 +37,43 @@ class HomeBody extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget homeImage() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          "assets/images/sun.png",
+          height: 130.h,
+          width: 130.w,
+        ),
+      ],
+    );
+  }
+
+  Widget weatherText(String title) {
+    return Text(
+      title,
+      style: GoogleFonts.pacifico(
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 3,
+        color: Colors.white,
+      ),
+    );
+  }
+
+  Widget temperatureText(String title) {
+    return Text(
+      title,
+      style: GoogleFonts.pacifico(
+        fontSize: 70.sp,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 3,
+        color: Colors.white,
       ),
     );
   }

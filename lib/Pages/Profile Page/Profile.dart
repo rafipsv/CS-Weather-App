@@ -5,7 +5,7 @@ import 'package:cs_weather_app/Pages/Search%20Page/Search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../HomePage/HomeTop.dart';
+import '../HomePage/Widgets/HomeTop.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
